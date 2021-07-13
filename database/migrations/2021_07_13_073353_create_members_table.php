@@ -14,8 +14,17 @@ class CreateMembersTable extends Migration
     public function up()
     {
         Schema::create('members', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->increments('id');
+            $table->string('lgu_ref_code');
+            $table->string('lastname');
+            $table->string('firstname');
+            $table->string('middlename');
+            $table->string('extensionname');
+            $table->date('birthdate');
+            $table->float('area');
+            $table->string('commodity');
+            $table->string('system_gen_control_num');
+            $table->integer('fca_id');
         });
     }
 

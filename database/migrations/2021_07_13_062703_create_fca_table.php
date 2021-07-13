@@ -24,7 +24,6 @@ class CreateFcaTable extends Migration
             $table->string('province');
             $table->string('contact_person');
             $table->integer('contact_number');
-            $table->timestamps();
         });
     }
 
