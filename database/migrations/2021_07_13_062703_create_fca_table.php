@@ -19,11 +19,11 @@ class CreateFcaTable extends Migration
             $table->date('application_received_date');
             $table->date('date_accredited');
             $table->string('fca_type');
-            $table->string('barangay');
+            $table->string('barangay')->nullable();
             $table->string('municipality');
             $table->string('province');
-            $table->string('contact_person');
-            $table->integer('contact_number');
+            $table->string('contact_person')->nullable();
+            $table->string('contact_number')->nullable();
         });
     }
 
