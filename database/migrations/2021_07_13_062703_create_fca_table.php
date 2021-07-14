@@ -13,7 +13,7 @@ class CreateFcaTable extends Migration
      */
     public function up()
     {
-        Schema::create('fca', function (Blueprint $table) {
+        Schema::create('fcas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('fca_name');
             $table->date('application_received_date');

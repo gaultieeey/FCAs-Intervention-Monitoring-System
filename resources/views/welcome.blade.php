@@ -18,6 +18,7 @@
                         <th>Province</th>
                     </tr>
                 </thead>
+                <tbody>
                 </tbody>
             </table>
         </div>
