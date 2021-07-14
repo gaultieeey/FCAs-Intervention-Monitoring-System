@@ -14,8 +14,12 @@ class CreateInterventionsTable extends Migration
     public function up()
     {
         Schema::create('interventions', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->increments('id');
+            $table->string('program');
+            $table->string('activity');
+            $table->string('type');
+            $table->string('description')->nullable();
+            $table->integer('fca_id');
         });
     }
 
