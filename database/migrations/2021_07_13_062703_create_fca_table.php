@@ -34,6 +34,6 @@ class CreateFcaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fca');
+        Schema::dropIfExists('fcas');
     }
 }
