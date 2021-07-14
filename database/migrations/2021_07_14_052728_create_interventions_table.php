@@ -20,6 +20,9 @@ class CreateInterventionsTable extends Migration
             $table->string('type');
             $table->string('description')->nullable();
             $table->integer('fca_id');
+            $table->integer('unit');
+            $table->float('actualcost');
+            $table->string('mode_of_implementation');
         });
     }
 
