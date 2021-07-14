@@ -23,6 +23,9 @@
     <!-- Datatables css -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
 
+    <!-- custom css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
+
 </head>
 
 <body id="page-top">
