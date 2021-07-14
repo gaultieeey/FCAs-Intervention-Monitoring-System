@@ -20,6 +20,9 @@
     <!-- Custom styles for this template-->
     <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
 
+    <!-- Datatables css -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+
 </head>
 
 <body id="page-top">
@@ -203,6 +206,11 @@
     <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
     <script src="{{asset('js/demo/chart-pie-demo.js')}}"></script>
 
+    <!-- datatables scripts -->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+    <!-- custom script -->
+    <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>
