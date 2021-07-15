@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Intervention extends Model
 {
     use HasFactory;
+
+    protected $primaryKey = 'intervention_id';
 }

@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class FCA extends Model
 {
     use HasFactory;
+
+    protected $primaryKey = 'fca_id';
+
+    protected $table = 'fcas';
 }

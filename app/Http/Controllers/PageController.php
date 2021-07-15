@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-use FCA;
-use Intervention;
-use Member;
-use User;
+use App\Models\FCA;
+use App\Models\Intervention;
+use App\Models\Member;
+use App\Models\User;
 
 class PageController extends Controller
 {
@@ -24,6 +24,19 @@ class PageController extends Controller
 
     public function show_fca($id)
     {
-        return view('fca');
+        $fca = FCA::find($id);
+
+        $members = Member::where('fca_id',$id)->get();
+        $countmembers = count($members);
+
+        $interventions = Intervention::where('fca_id', $id)->get();
+        $countinterventions = count($interventions);
+
+        return view('fca')
+            ->with('fca', $fca)
+            ->with('members', $members)
+            ->with('interventions', $interventions)
+            ->with('countmembers', $countmembers)
+            ->with('countinterventions', $countinterventions);
     }
 }
