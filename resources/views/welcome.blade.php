@@ -3,7 +3,7 @@
 @section('content')
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Farmer Cooperatives and Associations</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -27,7 +27,7 @@
                             <td>{{ $fca->municipality }}</td>
                             <td>{{ $fca->province }}</td>
                             <td>
-                                <a href="#" class="btn btn-info btn-circle btn-sm">
+                                <a href="/fca/{{ $fca->id }}" class="btn btn-info btn-circle btn-sm">
                                     <i class="fas fa-info-circle"></i>
                                 </a>
                                 <a href="#" class="btn btn-warning btn-circle btn-sm">

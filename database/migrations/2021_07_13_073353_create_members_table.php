@@ -20,6 +20,7 @@ class CreateMembersTable extends Migration
             $table->string('firstname');
             $table->string('middlename')->nullable();
             $table->string('extensionname')->nullable();
+            $table->string('position')->nullable();
             $table->date('birthdate')->nullable();
             $table->float('area')->nullable();
             $table->string('commodity')->nullable();

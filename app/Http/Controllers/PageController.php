@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use FCA;
+use Intervention;
+use Member;
+use User;
 
 class PageController extends Controller
 {
@@ -16,5 +20,10 @@ class PageController extends Controller
             ->get();
 
         return view('welcome')->with('fcas', $fcas);
+    }
+
+    public function show_fca($id)
+    {
+        return view('fca');
     }
 }

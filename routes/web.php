@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'App\Http\Controllers\PageController@index');
+Route::get('/fca/{id}', 'App\Http\Controllers\PageController@show_fca');
