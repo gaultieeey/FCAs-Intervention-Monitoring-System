@@ -13,12 +13,32 @@
                         <th>FCA Name</th>
                         <th>Members</th>
                         <th>Interventions Received</th>
-                        <th>Barangay</th>
                         <th>Municipality</th>
                         <th>Province</th>
+                        <th>Commands</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($fcas as $fca)
+                        <tr>
+                            <td>{{ $fca->fca_name }}</td>
+                            <td>{{ $fca->members }}</td>
+                            <td>{{ $fca->interventions }}</td>
+                            <td>{{ $fca->municipality }}</td>
+                            <td>{{ $fca->province }}</td>
+                            <td>
+                                <a href="#" class="btn btn-info btn-circle btn-sm">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+                                <a href="#" class="btn btn-warning btn-circle btn-sm">
+                                    <i class="fas fa-pencil"></i>
+                                </a>
+                                <a href="#" class="btn btn-danger btn-circle btn-sm">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

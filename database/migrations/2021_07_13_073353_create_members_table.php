@@ -14,7 +14,7 @@ class CreateMembersTable extends Migration
     public function up()
     {
         Schema::create('members', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('member_id');
             $table->string('lgu_ref_code')->nullable();
             $table->string('lastname');
             $table->string('firstname');

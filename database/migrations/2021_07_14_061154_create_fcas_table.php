@@ -14,7 +14,7 @@ class CreateFcasTable extends Migration
     public function up()
     {
         Schema::create('fcas', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('fca_id');
             $table->string('fca_name');
             $table->date('application_received_date');
             $table->date('date_accredited');

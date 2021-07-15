@@ -9,12 +9,12 @@ class PageController extends Controller
 {
     public function index(){
         $fcas = DB::table('fcas')
-            ->select(array('fca_name',DB::raw('count(members.id) as members')))
-            ->leftJoin('members','fcas.id','=','members.fca_id')
-            ->groupBy('fcas.id')
+            ->select(array('fcas.fca_id as id','fca_name',DB::raw('COUNT(DISTINCT members.member_id) as members'), DB::raw('COUNT(DISTINCT interventions.intervention_id) as interventions'),'municipality','province'))
+            ->leftJoin('members','fcas.fca_id','=','members.fca_id')
+            ->leftJoin('interventions','fcas.fca_id','=','interventions.fca_id')
+            ->groupBy('fcas.fca_id')
             ->get();
 
-        dd($fcas);
-        return view('welcome');
+        return view('welcome')->with('fcas', $fcas);
     }
 }
