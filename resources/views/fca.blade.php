@@ -10,14 +10,18 @@
 			    <p class="card-text">{{ $fca->municipality }}, {{ $fca->province }}</p>
 			  </div>
 			</div>
-
+		</div>
+		<div class="col-md-6">
 			<div class="card mb-4">
 				<div class="card-header py-3">
 					<h6 class="m-0 font-weight-bold text-primary">Details</h6>
 				</div>
 				 <div class="card-body">
-				    <h5 class="card-title">Number of Members			: 	{{ $countmembers }}</h5>
-				    <h5 class="card-title">Number of Interventions Received		:	{{ $countinterventions }}</h5>
+				 	<p class="card-text">Contact Person	:	{{ $fca->contact_person }}</p>
+				 	<p class="card-text">Contact Number	:	{{ $fca->contact_number }}</p>
+				    <p class="card-text">Number of Members	:	{{ $countmembers }}</p>
+				    <p class="card-text">Number of Members Encoded to FFRS	:	{{ $countmemberswithsysgen }}</p>
+				    <p class="card-tex">Number of Interventions Received	:	{{ $countinterventions }}</p>
 				</div>
 			</div>
 
@@ -26,12 +30,27 @@
 					<h6 class="m-0 font-weight-bold text-primary">Members</h6>
 				</div>
 				 <div class="card-body">
-				    <h5 class="card-title">Card title</h5>
-				    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				    <div class="list-group">
+				    	@foreach ($members as $member)
+				    		<li class="list-group-item d-flex justify-content-between align-items-start">
+							    <div class="ms-2 me-auto">
+							      <div class="fw-bold">{{ $member->firstname }} {{ $member->lastname }} {{ $member->extensionname }}</div>
+							      {{ $member->position }}
+							    </div>
+							    @if(!empty($member->system_gen_control_num))
+							    <buton id="encoded" type="button" class="badge btn btn-success btn-circle btn-sm" data-toggle="tooltip" data-placement="top" title="Encoded in FFRS">
+		                            <i class="fas fa-check"></i>
+		                        </button>
+		                        @endif
+							</li>
+				    	@endforeach
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="col-md-6">
+	</div>
+	<div class="row">
+		<div class="col-md-12">
 			<div class="card shadow mb-4">
 			    <div class="card-header py-3">
 			        <h6 class="m-0 font-weight-bold text-primary">Interventions Received</h6>

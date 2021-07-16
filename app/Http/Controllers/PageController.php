@@ -26,8 +26,16 @@ class PageController extends Controller
     {
         $fca = FCA::find($id);
 
-        $members = Member::where('fca_id',$id)->get();
+        $members = Member::where('fca_id',$id)
+            ->orderby('position')
+            ->limit(8)
+            ->get();
         $countmembers = count($members);
+        $memberswithsysgen = Member::select('system_gen_control_num')
+            ->where('fca_id',$id)
+            ->where('system_gen_control_num','like','%-%')
+            ->get();
+        $countmemberswithsysgen = count($memberswithsysgen);
 
         $interventions = Intervention::where('fca_id', $id)->get();
         $countinterventions = count($interventions);
@@ -37,6 +45,7 @@ class PageController extends Controller
             ->with('members', $members)
             ->with('interventions', $interventions)
             ->with('countmembers', $countmembers)
-            ->with('countinterventions', $countinterventions);
+            ->with('countinterventions', $countinterventions)
+            ->with('countmemberswithsysgen', $countmemberswithsysgen);
     }
 }
