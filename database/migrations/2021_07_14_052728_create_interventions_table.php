@@ -22,7 +22,7 @@ class CreateInterventionsTable extends Migration
             $table->integer('fca_id');
             $table->integer('unit');
             $table->float('actualcost');
-            $table->string('mode_of_implementation');
+            $table->integer('year_received');
         });
     }
 

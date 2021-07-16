@@ -64,6 +64,9 @@
 			                        <th>Activity</th>
 			                        <th>Type</th>
 			                        <th>Description</th>
+			                        <th>Unit</th>
+			                        <th>Cost</th>
+			                        <th>Year</th>
 			                        <th>Commands</th>
 			                    </tr>
 			                </thead>
@@ -74,6 +77,9 @@
 			                			<td>{{ $intervention->activity }}</td>
 			                			<td>{{ $intervention->type }}</td>
 			                			<td>{{ $intervention->description }}</td>
+			                			<td>{{ $intervention->unit }}</td>
+			                			<td>{{ $intervention->actualcost }}</td>
+			                			<td>{{ $intervention->year_received }}</td>
 			                			<td>
 			                				<a href="#" class="btn btn-info btn-circle btn-sm">
 			                                    <i class="fas fa-info-circle"></i>
