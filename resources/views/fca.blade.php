@@ -38,9 +38,9 @@
 							      {{ $member->position }}
 							    </div>
 							    @if(!empty($member->system_gen_control_num))
-							    <buton id="encoded" type="button" class="badge btn btn-success btn-circle btn-sm" data-toggle="tooltip" data-placement="top" title="Encoded in FFRS">
-		                            <i class="fas fa-check"></i>
-		                        </button>
+								    <buton id="encoded" type="button" class="badge btn btn-success btn-circle btn-sm" data-toggle="tooltip" data-placement="top" title="Encoded in FFRS">
+			                            <i class="fas fa-check"></i>
+			                        </button>
 		                        @endif
 							</li>
 				    	@endforeach
